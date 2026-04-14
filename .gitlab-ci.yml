@@ -16,9 +16,9 @@ deploy-job:
   script:
     - ssh ec2-user@54.236.241.188 "
         echo '🚀 Starting Deployment' &&
-        rm -rf reactdocker &&
+        rm -rf reactinternaldocker &&
         git clone -b master git@gitlab.com:RIMaheshKumar/reactinternaldocker.git &&
-        cd reactdocker &&
+        cd reactinternaldocker &&
         docker build -t reactdocker-app . &&
         docker stop reactdocker-app || true &&
         docker rm reactdocker-app || true &&
