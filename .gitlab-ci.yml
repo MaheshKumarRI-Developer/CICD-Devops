@@ -24,3 +24,4 @@ deploy-job:
         docker rm reactdocker-app || true &&
         docker run -d -p 80:80 --name reactdocker-app reactdocker-app &&
         echo '✅ Deployment Completed'
+      "
