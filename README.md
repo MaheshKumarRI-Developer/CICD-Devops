@@ -77,6 +77,12 @@ Docker is used to:
 
 ---
 
+## 📸 CI/CD Pipeline Execution
+
+Below shows successful pipeline execution including build, Docker image creation, and deployment:
+![Uploading image.png…]()
+----
+
 ## 🎯 Key Learnings
 
 * Implemented end-to-end CI/CD pipeline using GitLab
