@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# 🚀 CI/CD DevOps Pipeline with GitLab & Docker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project demonstrates a real-world CI/CD pipeline using **GitLab CI/CD**, **Docker**, and **AWS EC2**, with the repository mirrored to GitHub for public visibility.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📌 Overview
 
-### `npm start`
+The goal of this project is to automate the complete workflow from code commit to production deployment.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+It showcases how modern DevOps practices can be used to:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Automate build and deployment
+* Ensure consistent environments using Docker
+* Reduce manual intervention in release cycles
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🏗️ Architecture
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Flow:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Developer → Git Push → GitLab CI/CD → Build → Dockerize → Deploy → EC2 Server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## ⚙️ Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* **Frontend:** React.js
+* **CI/CD:** GitLab CI/CD
+* **Containerization:** Docker
+* **Cloud:** AWS EC2
+* **Version Control:** GitLab (Primary), GitHub (Mirror)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🔄 CI/CD Pipeline Flow
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Code is pushed to GitLab repository
+2. GitLab CI/CD pipeline is triggered automatically
+3. Pipeline stages:
 
-## Learn More
+   * Install dependencies
+   * Build application
+   * Create Docker image
+   * Deploy application to server
+4. Repository is mirrored to GitHub for public access
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔧 GitLab CI/CD Configuration
 
-### Code Splitting
+The pipeline is defined using `.gitlab-ci.yml` and follows a multi-stage process:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* **Build Stage:** Installs dependencies and builds the React app
+* **Docker Stage:** Creates Docker image for the application
+* **Deploy Stage:** Deploys the container to the server
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🐳 Docker Usage
 
-### Making a Progressive Web App
+Docker is used to:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Ensure consistency across development and production
+* Avoid environment-related issues
+* Simplify deployment using containerized applications
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## ☁️ Deployment
 
-### Deployment
+* Application is deployed on **AWS EC2**
+* Deployment is automated via CI/CD pipeline
+* No manual steps required after code push
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 🎯 Key Learnings
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Implemented end-to-end CI/CD pipeline using GitLab
+* Automated build and deployment workflows
+* Used Docker for containerized deployment
+* Integrated frontend development with DevOps practices
+
+---
+
+## 📌 Notes
+
+* GitLab is used for CI/CD execution
+* GitHub repository is used for showcasing the project (mirror setup)
+
+---
+
+## 🚀 Future Improvements
+
+* Add automated testing stage in pipeline
+* Integrate Docker Hub for image storage
+* Implement Kubernetes for scaling
+* Add monitoring using Grafana / Prometheus
+
+---
